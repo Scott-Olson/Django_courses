@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    {% load static %}
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+    <style type="text/css">
+  
+    </style>
+</head>
+<body>
+    <div class="container">
+    	<div class="row"><h3>Create a New User</h3></div>
+    	
+	    <div class="row">
+			
+			<form action='/users/create' class='form-horizontal' method='post' scope="col-6">
+				{% csrf_token %}
+				<label for="first_name">First Name:</label>
+				<input type='text' class="form-control" name='first_name' ><br>
+				
+				<label for="last_name">Last Name:</label>
+				<input type='text' class="form-control" name='last_name' ><br>
+				
+				<label for="email">Email address:</label>
+				<input type='text' class="form-control" name='email' >
+				
+				<input type="submit" name="newusersubmit">
+			</form>
+		</div>
+	</div>
+    <script type="text/javascript" src="{% static 'users/js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'users/js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'users/js/bootstrap.min.js' %}"></script>        
+</body>
+</html>
